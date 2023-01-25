@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header>
-      <q-toolbar class="bg-green-7">
+      <q-toolbar class="mon-toolbar">
         <q-btn
           flat
           dense
@@ -64,3 +64,12 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss">
+
+  .mon-toolbar{
+    padding: 0 100px 0 100px!important;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgb(65, 174, 53) 0%, rgb(93, 39, 50) 100%);
+  }
+</style>
