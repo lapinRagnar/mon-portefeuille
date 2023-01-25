@@ -70,6 +70,6 @@ export default defineComponent({
   .mon-toolbar{
     padding: 0 100px 0 100px!important;
     background: rgb(63,94,251);
-    background: radial-gradient(circle, rgb(65, 174, 53) 0%, rgb(93, 39, 50) 100%);
+    background: radial-gradient(circle, rgb(65, 174, 53) 0%, rgb(59, 39, 93) 100%);
   }
 </style>
