@@ -1,11 +1,26 @@
 <template>
   <q-page class="mybackground">
 
-    <div>
+    <div class="reduce-font-size-laptop">
       <div class="q-pa-xl fond-ecran">
-        <div class="text-h3 text-grey-1">Bonjour tout le monde, je suis <span class="text-weight-bold text-green-4">lapinRagnar</span> </div>
-        <div class="text-h4 text-weight-bold text-white">Developpeur Frontend javascript</div>
+        <div class="text-h3 text-white">
+          Bonjour tout le monde,
+          <span class="text-weight-bold text-green-8"></span>
+          <span class="cursor"></span>
+        </div>
+        <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div>
+        <div class="q-mt-xl full-width text-center">
+          <q-icon
+            v-for="(dataIcon, index) in datasIcons"
+            :key="index"
+            :color="dataIcon.couleur"
+            :name="dataIcon.nomIcon"
+            size="100px"
+            class="q-mr-xl"
+          />
+        </div>
       </div>
+
 
 
       <div
@@ -18,7 +33,7 @@
 
 
         <div
-          class="q-pa-md col-4 "
+          class="q-pa-md col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 "
           v-for="(donnee, i) in donneesMonCards"
           :key="i"
         >
@@ -33,15 +48,15 @@
             />
 
             <q-card-section class="bg-teal-7 text-orange">
-              <div class="text-h6">{{ donnee.title }}</div>
-              <div class="text-subtitle2">{{ donnee.subtitle1 }}</div>
+              <div class="text-body1 text-weight-bold taille-text-card-title-petite-ecran">{{ donnee.title }}</div>
+              <div class="text-caption taille-text-card-subtitle-petite-ecran">{{ donnee.subtitle1 }}</div>
             </q-card-section>
 
             <q-card-section
-              class="q-pt-none q-pt-sm cursor-pointer"
+              class="q-pt-none q-pt-sm cursor-pointer "
               @click="lienExterieur(donnee.codeLink)"
             >
-              <div>{{ donnee.content }}</div>
+              <div class="text-caption">{{ donnee.content }}</div>
               <q-btn
                 no-caps
                 icon-right="fa-brands fa-github"
@@ -121,6 +136,31 @@
     },
   ]
 
+  const datasIcons = [
+    {
+      nomIcon : 'fa-brands fa-html5',
+      couleur: 'blue-3'
+    },
+    {
+      nomIcon : 'fa-brands fa-css3-alt',
+      couleur: 'red'
+    },
+    {
+      nomIcon : 'fa-brands fa-node-js',
+      couleur: 'orange'
+    },
+    {
+      nomIcon : 'fa-brands fa-vuejs',
+      couleur: 'green'
+    },
+    {
+      nomIcon : 'fa-brands fa-node-js',
+      couleur: ''
+    },
+  ]
+
+
+
   function lienExterieur(lien){
     window.open(lien, '_blank');
   }
@@ -130,8 +170,42 @@
 
 <style lang="scss">
   .fond-ecran{
-    height: 200px;
+    height: 350px;
     background-image: url('fond-ecran-accueil.jpg');
-    opacity: 0.3;
+    /* opacity: 0.3; */
+
+    /* @media (max-width: 1020px) {
+      height: 940px;
+    } */
+    @media (max-width: 620px) {
+      height: 380px;
+    }
   }
+
+  .reduce-font-size-laptop > .fond-ecran > div{
+
+    @media (max-width: 600px){
+      font-size: 28px;
+    }
+  }
+
+  .taille-text-card-title-petite-ecran{
+    @media (max-width: 1000px){
+      font-size: 20px !important;
+    }
+  }
+
+  .taille-text-card-subtitle-petite-ecran{
+    @media (max-width: 1000px){
+      font-size: 14px !important;
+    }
+  }
+
+  .cursor{
+    display: inline-block;
+    margin-left: 3px;
+    width: 4px;
+    
+  }
+
 </style>
