@@ -5,10 +5,12 @@
       <div class="q-pa-xl fond-ecran">
         <div class="text-h3 text-white">
           Bonjour tout le monde,
-          <span class="text-weight-bold text-green-8"></span>
-          <span class="cursor"></span>
+          <span class="text-weight-bold text-green-8 blinking-cursor">
+            {{ text }}
+          </span>
+          <span class="cursor">&nbsp;</span>
         </div>
-        <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div>
+        <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
         <div class="q-mt-xl full-width text-center">
           <q-icon
             v-for="(dataIcon, index) in datasIcons"
@@ -21,6 +23,9 @@
         </div>
       </div>
 
+      <!-- typing writter -->
+
+      <p><span class="typeWriter text-white" data-text='["foo"]'></span></p>
 
 
       <div
@@ -75,6 +80,62 @@
 </template>
 
 <script setup>
+
+  import { ref, onMounted, reactive } from 'vue'
+
+  const text = ref('')
+
+  const opt = reactive({
+    currentPhraseIndex: 0,
+    currentCharacterIndex: 0,
+    currentPhrase: "",
+    isDeleting: false
+  })
+
+  const phrases = reactive([
+    "je suis lapinRagnar",
+    "developpeur front end",
+    "javascript",
+    'vue 3',
+    'quasar'
+  ])
+
+  const loop = () => {
+
+    const currentPhraseText = phrases[opt.currentPhraseIndex];
+
+
+    if (!opt.isDeleting) {
+
+      opt.currentPhrase += currentPhraseText[opt.currentCharacterIndex];
+      opt.currentCharacterIndex++;
+    } else {
+      opt.currentPhrase = opt.currentPhrase.slice(0, -1);
+      opt.currentCharacterIndex--;
+    }
+
+    text.value = opt.currentPhrase;
+
+    if (opt.currentCharacterIndex === currentPhraseText.length) {
+      opt.isDeleting = true;
+      opt.currentPhraseIndex = 0; // c'est moi
+    }
+    if (opt.currentCharacterIndex === 0) {
+      opt.currentPhrase = "";
+      opt.isDeleting = false;
+      opt.currentPhraseIndex++;
+
+      if (opt.currentPhraseIndex === opt.phrases?.length) {
+        opt.currentPhraseIndex = 0;
+      }
+    }
+    const spedUp = Math.random() * (80 - 50) + 50;
+    const normalSpeed = Math.random() * (300 - 200) + 200
+    const time = opt.isDeleting ? spedUp : normalSpeed
+    setTimeout(loop, time)
+  }
+
+
 
   const donneesMonCards = [
     {
@@ -159,11 +220,18 @@
     },
   ]
 
+  const typeValue = ref('')
 
 
   function lienExterieur(lien){
-    window.open(lien, '_blank');
+    window.open(lien, '_blank')
   }
+
+
+  onMounted(() => {
+    loop()
+  })
+
 
 
 </script>
@@ -205,7 +273,22 @@
     display: inline-block;
     margin-left: 3px;
     width: 4px;
-    
+    background-color: rgb(113, 21, 21);
+    animation: cursorBlink 1s infinite;
   }
+
+  @keyframes cursorBlink {
+    49% {background-color: #fff;}
+    50% {background-color: transparent;}
+    99% {background-color: transparent;}
+  }
+
+  .typing{
+    animation: none;
+  }
+
+  /* effet blinking */
+
+
 
 </style>
