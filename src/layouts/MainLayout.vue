@@ -53,6 +53,9 @@ export default defineComponent({
   setup () {
     const leftDrawerOpen = ref(false)
 
+    const x = 'mavariable'
+    console.log('ici', x)
+
     return {
 
       leftDrawerOpen,

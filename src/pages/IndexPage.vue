@@ -1,38 +1,120 @@
 <template>
+
   <q-page class="mybackground">
 
     <div class="reduce-font-size-laptop">
       <div class="q-pa-xl fond-ecran">
-        <div class="text-h3 text-white">
-          Bonjour tout le monde,
+        <div class=" text-white text-center">
+          <div class="text-h3">Bonjour tout le monde</div>
           <span class="text-weight-bold text-green-8 blinking-cursor">
             {{ text }}
           </span>
           <span class="cursor">&nbsp;</span>
+          <div>Je suis <span class="text-green text-body1 text-weight-bold">lapinRagnar</span></div>
+          <div>developpeur frontend - javascript</div>
         </div>
+
         <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
+
+        <!-- la caroussel -->
+        <div class="q-pa-md largeur-caroussel">
+          <q-carousel
+            v-model="slide"
+            transition-prev="slide-right"
+            transition-next="slide-left"
+            animated
+            control-color="primary"
+            class="rounded-borders bg-transparent text-white"
+            keep-alive
+            autoplay
+            height="200px"
+            infinite
+          >
+            <q-carousel-slide
+              name="style"
+              class="column no-wrap flex-center"
+            >
+              <q-icon
+                name="fa-brands fa-html5"
+                color="blue-3"
+                size="100px"
+              />
+              <div class="q-mt-md text-center">
+                {{ lorem }}
+              </div>
+            </q-carousel-slide>
+
+            <q-carousel-slide name="tv" class="column no-wrap flex-center">
+              <q-icon
+                name="fa-brands fa-css3-alt"
+                color="red"
+                size="100px"
+              />
+              <div class="q-mt-md text-center">
+                {{ lorem }}
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide
+              name="blabla"
+              class="column no-wrap flex-center"
+            >
+              <q-icon
+                name="fa-brands fa-node-js"
+                color="orange"
+                size="100px"
+              />
+              <div class="q-mt-md text-center">
+                {{ lorem }}
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide name="map" class="column no-wrap flex-center">
+              <q-icon
+                name="fa-brands fa-vuejs"
+                color="green"
+                size="100px"
+              />
+              <div class="q-mt-md text-center">
+                {{ lorem }}
+              </div>
+            </q-carousel-slide>
+          </q-carousel>
+
+          <!-- <div class="row justify-center">
+            <q-btn-toggle
+              glossy
+              v-model="slide"
+              :options="[
+                { label: 1, value: 'style' },
+                { label: 2, value: 'tv' },
+                { label: 3, value: 'layers' },
+                { label: 4, value: 'map' }
+              ]"
+            />
+          </div> -->
+        </div>
+
+        <!-- l'icon  -->
         <div class="q-mt-xl full-width text-center">
           <q-icon
             v-for="(dataIcon, index) in datasIcons"
             :key="index"
             :color="dataIcon.couleur"
             :name="dataIcon.nomIcon"
-            size="100px"
+            size="30px"
             class="q-mr-xl"
           />
         </div>
+
       </div>
 
       <!-- typing writter -->
 
-      <p><span class="typeWriter text-white" data-text='["foo"]'></span></p>
-
 
       <div
-          class="text-center text-h3 q-my-xl text-white"
-        >
-          Démo - mes realisations
-        </div>
+        class="text-center text-h3 q-my-xl text-white"
+      >
+        Démo - mes realisations
+      </div>
 
       <div class="row full-height mybackground">
 
@@ -83,7 +165,22 @@
 
   import { ref, onMounted, reactive } from 'vue'
 
+  /* fait avec chatgpt */
+  const message = ref('');
+  const words = [
+    'Welcome to Vue.js!',
+    'I am a ChatGPT model',
+    'Let me help you with code',
+  ];
+  let currentWordIndex = 0;
+  let currentLetterIndex = 0;
+
+   /* fin fait avec chatgpt */
+
   const text = ref('')
+
+  const slide = ref('style')
+  const lorem = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?'
 
   const opt = reactive({
     currentPhraseIndex: 0,
@@ -93,37 +190,63 @@
   })
 
   const phrases = reactive([
-    "je suis lapinRagnar",
-    "developpeur front end",
-    "javascript",
-    'vue 3',
-    'quasar'
+    "ab",
   ])
+  // const phrases = reactive([
+  //   "je suis lapinRagnar",
+  //   "developpeur front end",
+  //   "javascript",
+  //   'vue 3',
+  //   'quasar'
+  // ])
 
   const loop = () => {
 
-    const currentPhraseText = phrases[opt.currentPhraseIndex];
+    let currentPhraseText = ''
+    if (opt.currentPhraseIndex <= phrases.length)  {
+       currentPhraseText = phrases[opt.currentPhraseIndex]
+    }
 
+
+    console.log('currentPhraseIndex', opt.currentPhraseIndex,)
+    console.log('length of phrase', phrases.length)
+    console.log('currentCharacterIndex', opt.currentCharacterIndex)
+    console.log('currentPhrase', opt.currentPhrase)
+    console.log('isDeleting', opt.isDeleting)
+    console.log('currentPhraseText', currentPhraseText)
+
+    console.log("*******************************");
 
     if (!opt.isDeleting) {
 
       opt.currentPhrase += currentPhraseText[opt.currentCharacterIndex];
       opt.currentCharacterIndex++;
     } else {
-      opt.currentPhrase = opt.currentPhrase.slice(0, -1);
-      opt.currentCharacterIndex--;
+      opt.currentPhrase = opt.currentPhrase.slice(0, -1)
+      opt.currentCharacterIndex--
+
+      console.log('------ opt.currentCharacterIndex', opt.currentCharacterIndex);
     }
 
-    text.value = opt.currentPhrase;
+    text.value = opt.currentPhrase
 
-    if (opt.currentCharacterIndex === currentPhraseText.length) {
+    if (opt.currentCharacterIndex === currentPhraseText?.length) {
       opt.isDeleting = true;
-      opt.currentPhraseIndex = 0; // c'est moi
+      // opt.currentPhraseIndex = 0; // c'est moi
     }
     if (opt.currentCharacterIndex === 0) {
       opt.currentPhrase = "";
       opt.isDeleting = false;
-      opt.currentPhraseIndex++;
+
+      console.log('typeof currentPhraseText', typeof currentPhraseText)
+
+      if (opt.currentPhraseIndex >= phrases.length) {
+        console.log('je suis ici');
+        opt.currentPhraseIndex = 0
+      } else{
+        console.log('lelena....')
+        opt.currentPhraseIndex++;
+      }
 
       if (opt.currentPhraseIndex === opt.phrases?.length) {
         opt.currentPhraseIndex = 0;
@@ -214,10 +337,6 @@
       nomIcon : 'fa-brands fa-vuejs',
       couleur: 'green'
     },
-    {
-      nomIcon : 'fa-brands fa-node-js',
-      couleur: ''
-    },
   ]
 
   const typeValue = ref('')
@@ -238,7 +357,7 @@
 
 <style lang="scss">
   .fond-ecran{
-    height: 350px;
+    height: 80vh;
     background-image: url('fond-ecran-accueil.jpg');
     /* opacity: 0.3; */
 
@@ -288,6 +407,11 @@
   }
 
   /* effet blinking */
+
+  /* .largeur-caroussel{
+    width: 80%;
+
+  } */
 
 
 

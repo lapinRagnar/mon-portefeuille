@@ -56,6 +56,11 @@ module.exports = configure(function (/* ctx */) {
       },
 
       vueRouterMode: 'hash', // available values: 'hash', 'history'
+
+      devtool: 'source-map',
+      // devtool: 'eval-source-map',
+      // devtool: 'cheap-source-map',
+
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -106,7 +111,9 @@ module.exports = configure(function (/* ctx */) {
 
     // animations: 'all', // --- includes all animations
     // https://v2.quasar.dev/options/animations
-    animations: [],
+    animations: [
+      'fadeInDownBig'
+    ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#property-sourcefiles
     // sourceFiles: {
