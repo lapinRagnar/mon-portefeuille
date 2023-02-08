@@ -20,7 +20,7 @@
             <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
 
             <!-- la caroussel -->
-            <div class="largeur-caroussel bg-amber">
+            <div class="largeur-caroussel">
               <q-carousel
                 v-model="slide"
                 transition-prev="slide-right"
@@ -97,7 +97,7 @@
             </div>
 
             <!-- l'icon  -->
-            <!-- <div class="q-mt-xl full-width text-center">
+            <!-- <div class="q-mt-xl full-width text-center"></div>
               <q-icon
                 v-for="(dataIcon, index) in datasIcons"
                 :key="index"
@@ -108,11 +108,16 @@
               />
             </div> -->
 
+            <div>
+              <Clock />
+            </div>
+
           </div>
 
 
           <div class="col-6 bg-amber-2">
             bonjour
+
           </div>
 
           <div class="col-4 bg-blue-grey">
@@ -181,7 +186,14 @@
 
 <script setup>
 
+  import Clock from '../components/Clock.vue'
   import { ref, onMounted, reactive } from 'vue'
+
+  // import { Particles } from 'tsparticles'
+  // import { Particles } from 'tsparticles'
+
+  const slide = ref('style')
+  const time = ref(new Date().toLocaleTimeString())
 
   /* les variables fait avec chatgpt pour le writetyping effect */
   const message = ref('');
@@ -193,8 +205,13 @@
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
 
-   /* fin fait avec chatgpt */
+  /* fin fait avec chatgpt */
 
+  /** pour la text particule */
+
+  const tsParticlesRef = ref(null)
+
+  /** fin text paarticle */
 
   const donneesMonCards = [
     {
@@ -317,15 +334,25 @@
     }, 50)
   }
 
-
-
   /**
    * fin fait avec chatgpt
-   */
+  */
+
+
+
 
 
   onMounted(() => {
+
+    // pour la writetyping
     type()
+
+    // pour la text particle
+
+    setInterval(() => {
+      time.value = new Date().toLocaleTimeString()
+    }, 1000)
+
   })
 
 
@@ -394,6 +421,18 @@
 
   } */
 
+
+  /** pour la particle */
+  #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+
+  canvas {
+    background-color: #f7f7f7;
+  }
 
 
 </style>
