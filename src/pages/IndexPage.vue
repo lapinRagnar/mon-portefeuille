@@ -3,109 +3,127 @@
   <q-page class="mybackground">
 
     <div class="reduce-font-size-laptop">
+
       <div class="q-pa-xl fond-ecran">
-        <div class=" text-white text-center">
-          <div class="text-h3">Bonjour tout le monde</div>
-          <span class="text-weight-bold text-green-8 blinking-cursor">
-            {{ text }}
-          </span>
-          <span class="cursor">&nbsp;</span>
-          <div>Je suis <span class="text-green text-body1 text-weight-bold">lapinRagnar</span></div>
-          <div>developpeur frontend - javascript</div>
-        </div>
 
-        <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
+        <div class="row">
 
-        <!-- la caroussel -->
-        <div class="q-pa-md largeur-caroussel">
-          <q-carousel
-            v-model="slide"
-            transition-prev="slide-right"
-            transition-next="slide-left"
-            animated
-            control-color="primary"
-            class="rounded-borders bg-transparent text-white"
-            keep-alive
-            autoplay
-            height="200px"
-            infinite
-          >
-            <q-carousel-slide
-              name="style"
-              class="column no-wrap flex-center"
-            >
-              <q-icon
-                name="fa-brands fa-html5"
-                color="blue-3"
-                size="100px"
-              />
-              <div class="q-mt-md text-center">
-                {{ lorem }}
+          <div class="col-2">
+
+            <div class=" text-white text-center writetyping">
+              <div class="text-h3">Bonjour</div>
+              <div class="text-weight-bold text-grey-5 blinking-cursor text-h5 ">
+                {{ message }}
               </div>
-            </q-carousel-slide>
+            </div>
 
-            <q-carousel-slide name="tv" class="column no-wrap flex-center">
-              <q-icon
-                name="fa-brands fa-css3-alt"
-                color="red"
-                size="100px"
-              />
-              <div class="q-mt-md text-center">
-                {{ lorem }}
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide
-              name="blabla"
-              class="column no-wrap flex-center"
-            >
-              <q-icon
-                name="fa-brands fa-node-js"
-                color="orange"
-                size="100px"
-              />
-              <div class="q-mt-md text-center">
-                {{ lorem }}
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="map" class="column no-wrap flex-center">
-              <q-icon
-                name="fa-brands fa-vuejs"
-                color="green"
-                size="100px"
-              />
-              <div class="q-mt-md text-center">
-                {{ lorem }}
-              </div>
-            </q-carousel-slide>
-          </q-carousel>
+            <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
 
-          <!-- <div class="row justify-center">
-            <q-btn-toggle
-              glossy
-              v-model="slide"
-              :options="[
-                { label: 1, value: 'style' },
-                { label: 2, value: 'tv' },
-                { label: 3, value: 'layers' },
-                { label: 4, value: 'map' }
-              ]"
-            />
-          </div> -->
-        </div>
+            <!-- la caroussel -->
+            <div class="largeur-caroussel bg-amber">
+              <q-carousel
+                v-model="slide"
+                transition-prev="slide-right"
+                transition-next="slide-left"
+                animated
+                control-color="primary"
+                class="rounded-borders bg-transparent text-white"
+                keep-alive
+                autoplay
+                height="150px"
+                infinite
+              >
+                <q-carousel-slide
+                  name="style"
+                  class="column no-wrap flex-center"
+                >
+                  <q-icon
+                    name="fa-brands fa-html5"
+                    color="blue-3"
+                    size="100px"
+                  />
+                  <div class="q-mt-none text-center">
+                    HTML5
+                  </div>
+                </q-carousel-slide>
 
-        <!-- l'icon  -->
-        <div class="q-mt-xl full-width text-center">
-          <q-icon
-            v-for="(dataIcon, index) in datasIcons"
-            :key="index"
-            :color="dataIcon.couleur"
-            :name="dataIcon.nomIcon"
-            size="30px"
-            class="q-mr-xl"
-          />
+                <q-carousel-slide name="tv" class="column no-wrap flex-center">
+                  <q-icon
+                    name="fa-brands fa-css3-alt"
+                    color="red"
+                    size="100px"
+                  />
+                  <div class="q-mt-none text-center">
+                    CSS3
+                  </div>
+                </q-carousel-slide>
+                <q-carousel-slide
+                  name="blabla"
+                  class="column no-wrap flex-center"
+                >
+                  <q-icon
+                    name="fa-brands fa-node-js"
+                    color="orange"
+                    size="100px"
+                  />
+                  <div class="q-mt-none text-center">
+                    Javascript
+                  </div>
+                </q-carousel-slide>
+                <q-carousel-slide name="map" class="column no-wrap flex-center">
+                  <q-icon
+                    name="fa-brands fa-vuejs"
+                    color="green"
+                    size="100px"
+                  />
+                  <div class="q-mt-none text-center">
+                    Vue.js
+                  </div>
+                </q-carousel-slide>
+              </q-carousel>
+
+              <!-- <div class="row justify-center">
+                <q-btn-toggle
+                  glossy
+                  v-model="slide"
+                  :options="[
+                    { label: 1, value: 'style' },
+                    { label: 2, value: 'tv' },
+                    { label: 3, value: 'layers' },
+                    { label: 4, value: 'map' }
+                  ]"
+                />
+              </div> -->
+            </div>
+
+            <!-- l'icon  -->
+            <!-- <div class="q-mt-xl full-width text-center">
+              <q-icon
+                v-for="(dataIcon, index) in datasIcons"
+                :key="index"
+                :color="dataIcon.couleur"
+                :name="dataIcon.nomIcon"
+                size="30px"
+                class="q-mr-xl"
+              />
+            </div> -->
+
+          </div>
+
+
+          <div class="col-6 bg-amber-2">
+            bonjour
+          </div>
+
+          <div class="col-4 bg-blue-grey">
+            salut
+          </div>
+
         </div>
 
       </div>
+
+
 
       <!-- typing writter -->
 
@@ -165,99 +183,17 @@
 
   import { ref, onMounted, reactive } from 'vue'
 
-  /* fait avec chatgpt */
+  /* les variables fait avec chatgpt pour le writetyping effect */
   const message = ref('');
   const words = [
-    'Welcome to Vue.js!',
-    'I am a ChatGPT model',
-    'Let me help you with code',
+    'Je suis lapinRagnar',
+    'developpeur frontend',
+    'javascript',
   ];
   let currentWordIndex = 0;
   let currentLetterIndex = 0;
 
    /* fin fait avec chatgpt */
-
-  const text = ref('')
-
-  const slide = ref('style')
-  const lorem = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?'
-
-  const opt = reactive({
-    currentPhraseIndex: 0,
-    currentCharacterIndex: 0,
-    currentPhrase: "",
-    isDeleting: false
-  })
-
-  const phrases = reactive([
-    "ab",
-  ])
-  // const phrases = reactive([
-  //   "je suis lapinRagnar",
-  //   "developpeur front end",
-  //   "javascript",
-  //   'vue 3',
-  //   'quasar'
-  // ])
-
-  const loop = () => {
-
-    let currentPhraseText = ''
-    if (opt.currentPhraseIndex <= phrases.length)  {
-       currentPhraseText = phrases[opt.currentPhraseIndex]
-    }
-
-
-    console.log('currentPhraseIndex', opt.currentPhraseIndex,)
-    console.log('length of phrase', phrases.length)
-    console.log('currentCharacterIndex', opt.currentCharacterIndex)
-    console.log('currentPhrase', opt.currentPhrase)
-    console.log('isDeleting', opt.isDeleting)
-    console.log('currentPhraseText', currentPhraseText)
-
-    console.log("*******************************");
-
-    if (!opt.isDeleting) {
-
-      opt.currentPhrase += currentPhraseText[opt.currentCharacterIndex];
-      opt.currentCharacterIndex++;
-    } else {
-      opt.currentPhrase = opt.currentPhrase.slice(0, -1)
-      opt.currentCharacterIndex--
-
-      console.log('------ opt.currentCharacterIndex', opt.currentCharacterIndex);
-    }
-
-    text.value = opt.currentPhrase
-
-    if (opt.currentCharacterIndex === currentPhraseText?.length) {
-      opt.isDeleting = true;
-      // opt.currentPhraseIndex = 0; // c'est moi
-    }
-    if (opt.currentCharacterIndex === 0) {
-      opt.currentPhrase = "";
-      opt.isDeleting = false;
-
-      console.log('typeof currentPhraseText', typeof currentPhraseText)
-
-      if (opt.currentPhraseIndex >= phrases.length) {
-        console.log('je suis ici');
-        opt.currentPhraseIndex = 0
-      } else{
-        console.log('lelena....')
-        opt.currentPhraseIndex++;
-      }
-
-      if (opt.currentPhraseIndex === opt.phrases?.length) {
-        opt.currentPhraseIndex = 0;
-      }
-    }
-    const spedUp = Math.random() * (80 - 50) + 50;
-    const normalSpeed = Math.random() * (300 - 200) + 200
-    const time = opt.isDeleting ? spedUp : normalSpeed
-    setTimeout(loop, time)
-  }
-
 
 
   const donneesMonCards = [
@@ -346,9 +282,50 @@
     window.open(lien, '_blank')
   }
 
+  /**
+  * fait avec chatgpt pour le writetyping effect
+  */
+
+  const type = () => {
+    if (currentLetterIndex === words[currentWordIndex].length) {
+      setTimeout(() => {
+        erase();
+      }, 1000);
+      return;
+    }
+
+    message.value += words[currentWordIndex][currentLetterIndex];
+    currentLetterIndex++;
+    setTimeout(() => {
+      type();
+    }, 100);
+  }
+
+  const erase = () => {
+    if (currentLetterIndex === 0) {
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+      setTimeout(() => {
+        type()
+      }, 1000)
+      return
+    }
+
+    message.value = message.value.slice(0, -1);
+    currentLetterIndex--;
+    setTimeout(() => {
+      erase();
+    }, 50)
+  }
+
+
+
+  /**
+   * fin fait avec chatgpt
+   */
+
 
   onMounted(() => {
-    loop()
+    type()
   })
 
 
@@ -404,6 +381,10 @@
 
   .typing{
     animation: none;
+  }
+
+  .writetyping{
+    min-height: 90px;
   }
 
   /* effet blinking */
