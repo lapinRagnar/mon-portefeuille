@@ -96,18 +96,6 @@
               </div> -->
             </div>
 
-            <!-- l'icon  -->
-            <!-- <div class="q-mt-xl full-width text-center"></div>
-              <q-icon
-                v-for="(dataIcon, index) in datasIcons"
-                :key="index"
-                :color="dataIcon.couleur"
-                :name="dataIcon.nomIcon"
-                size="30px"
-                class="q-mr-xl"
-              />
-            </div> -->
-
             <div>
               <Clock />
             </div>
@@ -117,6 +105,11 @@
 
           <div class="col-6 bg-amber-2">
             bonjour
+            <q-card>
+              <q-card-section class="text-center">
+                <div ref="rendererContainer"></div>
+              </q-card-section>
+            </q-card>
 
           </div>
 
@@ -186,11 +179,13 @@
 
 <script setup>
 
-  import Clock from '../components/Clock.vue'
-  import { ref, onMounted, reactive } from 'vue'
+  /** three js */
+  import * as THREE from 'three'
 
-  // import { Particles } from 'tsparticles'
-  // import { Particles } from 'tsparticles'
+
+  import Clock from '../components/Clock.vue'
+  import { ref, onMounted } from 'vue'
+
 
   const slide = ref('style')
   const time = ref(new Date().toLocaleTimeString())
@@ -209,9 +204,7 @@
 
   /** pour la text particule */
 
-  const tsParticlesRef = ref(null)
-
-  /** fin text paarticle */
+  /** fin text particle */
 
   const donneesMonCards = [
     {
@@ -273,26 +266,25 @@
     },
   ]
 
-  const datasIcons = [
-    {
-      nomIcon : 'fa-brands fa-html5',
-      couleur: 'blue-3'
-    },
-    {
-      nomIcon : 'fa-brands fa-css3-alt',
-      couleur: 'red'
-    },
-    {
-      nomIcon : 'fa-brands fa-node-js',
-      couleur: 'orange'
-    },
-    {
-      nomIcon : 'fa-brands fa-vuejs',
-      couleur: 'green'
-    },
-  ]
+  // const datasIcons = [
+  //   {
+  //     nomIcon : 'fa-brands fa-html5',
+  //     couleur: 'blue-3'
+  //   },
+  //   {
+  //     nomIcon : 'fa-brands fa-css3-alt',
+  //     couleur: 'red'
+  //   },
+  //   {
+  //     nomIcon : 'fa-brands fa-node-js',
+  //     couleur: 'orange'
+  //   },
+  //   {
+  //     nomIcon : 'fa-brands fa-vuejs',
+  //     couleur: 'green'
+  //   },
+  // ]
 
-  const typeValue = ref('')
 
 
   function lienExterieur(lien){
@@ -338,6 +330,41 @@
    * fin fait avec chatgpt
   */
 
+  /** phrase animation avec three */
+
+  const rendererContainer = ref(null)
+
+  const renderer = ref(null)
+  const scene = ref(null)
+  const camera = ref(null)
+  const textMesh = ref(null)
+
+  const phrases = [
+    "Hello World!",
+    "Random Phrase",
+    "QuasarJS Rocks!",
+    "Animate Me",
+    "Keep Moving"
+  ]
+
+  function updateText() {
+    const randomIndex = Math.floor(Math.random() * phrases.length)
+    textMesh.value.geometry = new THREE.TextGeometry(phrases[randomIndex], {
+      font: new THREE.Font(new THREE.FontLoader().parse(THREE.FontLoader.prototype.extractUrlBase(`https://threejs.org/examples/fonts/helvetiker_regular.typeface.json`))),
+      size: 0.5,
+      height: 0.1
+    })
+  }
+
+  function animate() {
+    requestAnimationFrame(animate)
+    updateText()
+    renderer.value.render(scene.value, camera.value)
+  }
+
+
+  /** fin phrase animation avec three */
+
 
 
 
@@ -352,6 +379,17 @@
     setInterval(() => {
       time.value = new Date().toLocaleTimeString()
     }, 1000)
+
+    // pour l'animation text avec three
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+    console.log('scene', scene, camera)
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement )
+
 
   })
 
