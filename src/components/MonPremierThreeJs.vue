@@ -27,19 +27,26 @@
     container.value.appendChild(renderer.domElement)
 
     // pour ajouter le cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+    const geometry = new THREE.BoxGeometry(2, 2, 2)
+    const material = new THREE.MeshBasicMaterial({ color: 0xf92ad0 })
     const cube = new THREE.Mesh(geometry, material)
     scene.add(cube)
 
+    cube.position.set(2, 0, 0)
+
     // pour ajouter la sphere
-    const sphereGeometry = new THREE.SphereGeometry(2, 5, 5)
+    const sphereGeometry = new THREE.SphereGeometry(2, 25, 25)
     const sphereMaterial = new THREE.MeshBasicMaterial({
       color: 0x0000FF,
       wireframe: true
     })
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
     scene.add(sphere)
+
+    // sphere.position.x = -3  // ou
+    sphere.position.set(-3, 0, 0)
+    let step = 0
+    let speed = 0.01
 
     // pour les axes
     const axesHelper = new THREE.AxesHelper(5)
@@ -58,6 +65,9 @@
 
       cube.rotation.x += 0.01
       cube.rotation.y += 0.01
+
+      step += speed
+      sphere.position.y = 1 * Math.abs(Math.sin(step))
 
       renderer.render(scene, camera)
     }
