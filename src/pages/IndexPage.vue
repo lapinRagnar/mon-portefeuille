@@ -103,7 +103,7 @@
           </div>
 
 
-          <div class="col-6 bg-amber-2 q-pa-md">
+          <div class="col-6 text-white q-pa-md">
             bonjour
             <MonPremierThreeJs></MonPremierThreeJs>
 
