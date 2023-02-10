@@ -103,17 +103,13 @@
           </div>
 
 
-          <div class="col-6 bg-amber-2">
+          <div class="col-6 bg-amber-2 q-pa-md">
             bonjour
-            <q-card>
-              <q-card-section class="text-center">
-                <div ref="rendererContainer"></div>
-              </q-card-section>
-            </q-card>
+            <MonPremierThreeJs></MonPremierThreeJs>
 
           </div>
 
-          <div class="col-4 bg-blue-grey">
+          <div class="col-4 bg-blue-grey q-pa-md">
             salut
           </div>
 
@@ -172,6 +168,9 @@
         </div>
 
       </div>
+
+
+
     </div>
 
   </q-page>
@@ -179,8 +178,10 @@
 
 <script setup>
 
+  /** component */
+  import MonPremierThreeJs from 'src/components/MonPremierThreeJs.vue'
+
   /** three js */
-  import * as THREE from 'three'
 
 
   import Clock from '../components/Clock.vue'
@@ -332,35 +333,6 @@
 
   /** phrase animation avec three */
 
-  const rendererContainer = ref(null)
-
-  const renderer = ref(null)
-  const scene = ref(null)
-  const camera = ref(null)
-  const textMesh = ref(null)
-
-  const phrases = [
-    "Hello World!",
-    "Random Phrase",
-    "QuasarJS Rocks!",
-    "Animate Me",
-    "Keep Moving"
-  ]
-
-  function updateText() {
-    const randomIndex = Math.floor(Math.random() * phrases.length)
-    textMesh.value.geometry = new THREE.TextGeometry(phrases[randomIndex], {
-      font: new THREE.Font(new THREE.FontLoader().parse(THREE.FontLoader.prototype.extractUrlBase(`https://threejs.org/examples/fonts/helvetiker_regular.typeface.json`))),
-      size: 0.5,
-      height: 0.1
-    })
-  }
-
-  function animate() {
-    requestAnimationFrame(animate)
-    updateText()
-    renderer.value.render(scene.value, camera.value)
-  }
 
 
   /** fin phrase animation avec three */
@@ -381,15 +353,6 @@
     }, 1000)
 
     // pour l'animation text avec three
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-    console.log('scene', scene, camera)
-
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement )
-
 
   })
 
