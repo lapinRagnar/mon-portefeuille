@@ -6,6 +6,8 @@
 <script setup>
   import { ref, onMounted } from 'vue'
   import * as THREE from 'three'
+  import {OrbitControls, MapControls} from 'three/examples/jsm/controls/OrbitControls'
+
 
   const container = ref(null)
 
@@ -31,7 +33,15 @@
     const cube = new THREE.Mesh(geometry, material)
     scene.add(cube)
 
-    camera.position.z = 5
+    const axesHelper = new THREE.AxesHelper(5)
+    scene.add(axesHelper)
+
+    const orbit = new OrbitControls(camera, renderer.domElement)
+
+    // camera.position.z = 5
+    camera.position.set(0, 0, 5)
+
+    orbit.update()
 
     const animate = () => {
       requestAnimationFrame(animate)
