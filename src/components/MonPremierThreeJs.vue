@@ -1,5 +1,4 @@
 <template>
-  <div>ca marche</div>
   <div ref="container" class="bg-transparent"></div>
 </template>
 
@@ -17,14 +16,14 @@
 
   onMounted(() => {
 
-    const width = 880
+    const width = 680
     const height = 300
-
-
+    // const width = 880
+    // const height = 300
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
-    const renderer = new THREE.WebGLRenderer({ antialias: true })
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
 
     renderer.setSize(width, height)
 
@@ -72,7 +71,7 @@
     const orbit = new OrbitControls(camera, renderer.domElement)
 
     // camera.position.z = 5
-    camera.position.set(0, 0, 5)
+    camera.position.set(0, 0, 10)
 
     orbit.update()
 
@@ -122,10 +121,12 @@
 
         let textGeometry = new TextGeometry(texts[i], {
           font: font,
-          size: 2,
+          size: 1.5,
           height: 0.8,
 
         })
+
+        textGeometry.center()
 
         console.log('textGeometry', textGeometry)
 
@@ -182,8 +183,8 @@
 
       const time = - performance.now() * 0.0005;
 
-      camera.position.x = 10 * Math.sin( time );
-      camera.position.y = 20 * Math.cos( time );
+      camera.position.x = 1 * Math.sin( time );
+      camera.position.y = 2 * Math.cos( time );
       // camera.position.z = 2 * Math.cos( time );
       camera.lookAt( scene.position );
 
@@ -235,3 +236,11 @@
     // animate()
   })
 </script>
+
+<style lang="scss">
+  .bg-transparent{
+    canvas{
+      background-color: transparent;
+    }
+  }
+</style>

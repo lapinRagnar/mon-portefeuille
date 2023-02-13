@@ -11,8 +11,13 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Portefeuille - lapinRagnar
+        <q-toolbar-title class="mon-q-toolbar-title">
+          <div>
+            Portefeuille
+          </div>
+          <div class="text-geometry-logo">
+            <TextGeometryLogo />
+          </div>
         </q-toolbar-title>
 
       </q-toolbar>
@@ -26,7 +31,8 @@
         <q-item-label
           header
         >
-          Bonjour
+          Bonjour hahaha
+
         </q-item-label>
 
       </q-list>
@@ -40,14 +46,14 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-
+import TextGeometryLogo from '../components/TextGeometryLogo.vue'
 
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-
+    TextGeometryLogo
   },
 
   setup () {
@@ -84,5 +90,16 @@ export default defineComponent({
     padding: 0 100px 0 100px!important;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgb(65, 174, 53) 0%, rgb(59, 39, 93) 100%);
+  }
+
+  .mon-q-toolbar-title{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    .text-geometry-logo{
+      margin: 0;
+      padding-bottom: 0;
+    }
   }
 </style>

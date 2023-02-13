@@ -11,7 +11,6 @@
           <div class="col-2">
 
             <div class=" text-white text-center writetyping">
-              <div class="text-h3">Bonjour</div>
               <div class="text-weight-bold text-grey-5 blinking-cursor text-h5 ">
                 {{ message }}
               </div>
@@ -104,9 +103,7 @@
 
 
           <div class="col-6 text-white q-pa-md">
-            bonjour
-            <MonPremierThreeJs></MonPremierThreeJs>
-
+            <MonPremierThreeJs/>
           </div>
 
           <div class="col-4 bg-blue-grey q-pa-md">
@@ -117,10 +114,7 @@
 
       </div>
 
-
-
       <!-- typing writter -->
-
 
       <div
         class="text-center text-h3 q-my-xl text-white"
@@ -169,7 +163,7 @@
 
       </div>
 
-
+      <TextGeometryLogo />
 
     </div>
 
@@ -180,9 +174,9 @@
 
   /** component */
   import MonPremierThreeJs from 'src/components/MonPremierThreeJs.vue'
+  import TextGeometryLogo from 'src/components/TextGeometryLogo.vue';
 
   /** three js */
-
 
   import Clock from '../components/Clock.vue'
   import { ref, onMounted } from 'vue'
@@ -339,8 +333,6 @@
 
 
 
-
-
   onMounted(() => {
 
     // pour la writetyping
@@ -362,7 +354,7 @@
 
 <style lang="scss">
   .fond-ecran{
-    height: 80vh;
+    height: 60vh;
     background-image: url('fond-ecran-accueil.jpg');
     /* opacity: 0.3; */
 
