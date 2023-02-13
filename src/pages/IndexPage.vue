@@ -10,10 +10,8 @@
 
           <div class="col-2">
 
-            <div class=" text-white text-center writetyping">
-              <div class="text-weight-bold text-grey-5 blinking-cursor text-h5 ">
-                {{ message }}
-              </div>
+            <div>
+              <Clock />
             </div>
 
             <!-- <div class="text-h4 text-weight-bold text-white q-mt-md">Developpeur - Frontend javascript</div> -->
@@ -95,8 +93,10 @@
               </div> -->
             </div>
 
-            <div>
-              <Clock />
+            <div class=" text-white text-center writetyping">
+              <div class="text-weight-bold text-grey-5 blinking-cursor text-h5 ">
+                {{ message }}
+              </div>
             </div>
 
           </div>
@@ -405,6 +405,7 @@
 
   .writetyping{
     min-height: 90px;
+    margin-top: 70px;
   }
 
   /* effet blinking */

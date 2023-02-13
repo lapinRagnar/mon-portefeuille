@@ -6,18 +6,22 @@
           flat
           dense
           round
+          color="orange"
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
 
         <q-toolbar-title class="mon-q-toolbar-title">
-          <div>
-            Portefeuille
-          </div>
+
           <div class="text-geometry-logo">
             <TextGeometryLogo />
           </div>
+
+          <div>
+            developpeur Fontend
+          </div>
+
         </q-toolbar-title>
 
       </q-toolbar>
@@ -95,7 +99,8 @@ export default defineComponent({
   .mon-q-toolbar-title{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+    gap: 10px;
 
     .text-geometry-logo{
       margin: 0;

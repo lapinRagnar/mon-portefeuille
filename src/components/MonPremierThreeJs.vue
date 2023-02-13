@@ -121,7 +121,7 @@
 
         let textGeometry = new TextGeometry(texts[i], {
           font: font,
-          size: 1.5,
+          size: 1.1,
           height: 0.8,
 
         })
