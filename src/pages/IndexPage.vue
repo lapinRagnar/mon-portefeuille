@@ -116,11 +116,17 @@
 
       <!-- typing writter -->
 
+
       <div
         class="text-center text-h3 q-my-xl text-white"
+        data-aos="fade-up"
       >
         Démo - mes realisations
       </div>
+
+
+      <!-- listes de mes réalisations - démo -->
+
 
       <div class="row full-height mybackground">
 
@@ -131,7 +137,7 @@
           :key="i"
         >
 
-          <q-card class="my-card">
+          <q-card class="my-card" data-aos="fade-up">
 
             <q-img
               :src="donnee.img"
@@ -163,7 +169,11 @@
 
       </div>
 
+
+
       <TextGeometryLogo />
+
+
 
     </div>
 
@@ -176,6 +186,9 @@
   import MonPremierThreeJs from 'src/components/MonPremierThreeJs.vue'
   import TextGeometryLogo from 'src/components/TextGeometryLogo.vue';
 
+  /** aos animation on scroll */
+  import AOS from 'aos'
+  import 'aos/dist/aos.css'
   /** three js */
 
   import Clock from '../components/Clock.vue'
@@ -332,6 +345,14 @@
   /** fin phrase animation avec three */
 
 
+  /** le scroll - aos */
+  AOS.init({
+    offset: 200,
+    duration: 600,
+    easing: 'ease-in-sine',
+    delay: 100,
+  })
+
 
   onMounted(() => {
 
@@ -346,6 +367,8 @@
 
     // pour l'animation text avec three
 
+
+
   })
 
 
@@ -354,7 +377,7 @@
 
 <style lang="scss">
   .fond-ecran{
-    height: 60vh;
+    height: 80vh;
     background-image: url('fond-ecran-accueil.jpg');
     /* opacity: 0.3; */
 

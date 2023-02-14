@@ -128,8 +128,6 @@
 
         textGeometry.center()
 
-        console.log('textGeometry', textGeometry)
-
         // textGeometry.computeBoundingBox()
         // textGeometry.computeVertexNormals()
 
@@ -141,7 +139,6 @@
           textMaterialRear
         ])
 
-        console.log("Math.random() * 1000 - 500", Math.random() * (5 - (-5)) + (-5))
 
         textMesh.position.x = Math.random() * (6 - (-10)) + (-10) //Math.random() * 1;
         textMesh.position.y = Math.random() * (6 - (-6)) + (-6) // Math.random() * 1;
@@ -160,6 +157,7 @@
         // monTextGeometry.position.set(3, 3, 0)
 
         scene.add(textMesh)
+
 
       }
 
@@ -181,10 +179,10 @@
 
       // ********************
 
-      const time = - performance.now() * 0.0005;
+      const time = - performance.now() * 0.0005
 
-      camera.position.x = 1 * Math.sin( time );
-      camera.position.y = 2 * Math.cos( time );
+      camera.position.x = 1 * Math.sin( time )
+      camera.position.y = 2 * Math.cos( time )
       // camera.position.z = 2 * Math.cos( time );
       camera.lookAt( scene.position );
 
