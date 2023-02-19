@@ -106,8 +106,11 @@
             <MonPremierThreeJs/>
           </div>
 
-          <div class="col-4 bg-blue-grey q-pa-md">
-            salut
+          <!-- le timeline -->
+          <div class="col-4 bg-blue-grey q-pa-md rounded-borders colonne-a-droite">
+            <q-scroll-area style="height: 500px;">
+              <MonTimelineRealisation />
+            </q-scroll-area>
           </div>
 
         </div>
@@ -137,7 +140,7 @@
         class="text-center text-h3 q-my-xl text-white"
         data-aos="fade-up"
       >
-        Démo - mes realisations
+        Démo & codes - mes realisations
       </div>
 
 
@@ -186,8 +189,9 @@
       </div>
 
 
-
-      <TextGeometryLogo />
+      <div class="row justify-center">
+        <TextGeometryLogo />
+      </div>
 
 
 
@@ -201,6 +205,7 @@
   /** component */
   import MonPremierThreeJs from 'src/components/MonPremierThreeJs.vue'
   import TextGeometryLogo from 'src/components/TextGeometryLogo.vue';
+  import MonTimelineRealisation from 'src/components/MonTimelineRealisation.vue';
 
   /** aos animation on scroll */
   import AOS from 'aos'
@@ -396,7 +401,7 @@
     height: 90vh;
     width: 100%;
     background-size: cover;
-    animation: animate 30s ease-in infinite;
+    animation: animate 30s ease-in-out infinite;
 
     @keyframes animate {
       0%, 100%{
@@ -418,6 +423,10 @@
     } */
     @media (max-width: 620px) {
       height: 380px;
+    }
+
+    .colonne-a-droite{
+      max-height: 500px;
     }
   }
 
@@ -465,10 +474,10 @@
 
   /* effet blinking */
 
-  /* .largeur-caroussel{
-    width: 80%;
+  .largeur-caroussel{
+    margin-top: 50px;
 
-  } */
+  }
 
 
   /** pour la particle */
@@ -485,7 +494,7 @@
 
   /** mon chevron */
   .mon-chevron{
-    margin-top: 120px;
+    margin-top:40px;
     display: flex;
     justify-content: space-between;
   }
