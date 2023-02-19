@@ -112,6 +112,22 @@
 
         </div>
 
+        <div class="mon-chevron">
+
+          <q-icon
+            name="fa-solid fa-chevron-down fa-beat"
+            size="70px"
+            color="orange-5"
+          />
+          <q-icon
+            name="fa-solid fa-chevron-down fa-beat"
+            size="70px"
+            color="orange-5"
+          />
+
+        </div>
+
+
       </div>
 
       <!-- typing writter -->
@@ -348,8 +364,8 @@
   /** le scroll - aos */
   AOS.init({
     offset: 200,
-    duration: 600,
-    easing: 'ease-in-sine',
+    duration: 1200,
+    easing: 'ease-in-out-sine',
     delay: 100,
   })
 
@@ -377,7 +393,7 @@
 
 <style lang="scss">
   .fond-ecran{
-    height: 80vh;
+    height: 90vh;
     background-image: url('fond-ecran-accueil.jpg');
     /* opacity: 0.3; */
 
@@ -451,5 +467,11 @@
     background-color: #f7f7f7;
   }
 
+  /** mon chevron */
+  .mon-chevron{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+  }
 
 </style>
