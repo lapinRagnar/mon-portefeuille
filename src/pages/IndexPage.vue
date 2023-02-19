@@ -8,6 +8,7 @@
 
         <div class="row">
 
+          <!-- colonne à gauche -->
           <div class="col-2">
 
             <div>
@@ -101,11 +102,12 @@
 
           </div>
 
-
+          <!-- colonne au milieu -->
           <div class="col-6 text-white q-pa-md">
             <MonPremierThreeJs/>
           </div>
 
+          <!-- colonne à droite -->
           <!-- le timeline -->
           <div class="col-4 bg-blue-grey q-pa-md rounded-borders colonne-a-droite">
             <q-scroll-area style="height: 500px;">
@@ -133,9 +135,9 @@
 
       </div>
 
-      <!-- typing writter -->
 
 
+      <!-- les démos et codes sur github -->
       <div
         class="text-center text-h3 q-my-xl text-white"
         data-aos="fade-up"
