@@ -390,8 +390,6 @@
 
     // pour l'animation text avec three
 
-
-
   })
 
 
