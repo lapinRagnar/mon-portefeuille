@@ -394,7 +394,23 @@
 <style lang="scss">
   .fond-ecran{
     height: 90vh;
-    background-image: url('fond-ecran-accueil.jpg');
+    width: 100%;
+    background-size: cover;
+    animation: animate 30s ease-in infinite;
+
+    @keyframes animate {
+      0%, 100%{
+        background-image: url('fond-ecran-accueil.jpg');
+      }
+
+      35%{
+        background-image: url('background-image1.jpg');
+      }
+
+      75%{
+        background-image: url('background-image2.jpg');
+      }
+    }
     /* opacity: 0.3; */
 
     /* @media (max-width: 1020px) {
