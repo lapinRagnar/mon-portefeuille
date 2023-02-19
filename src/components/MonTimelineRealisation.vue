@@ -66,6 +66,6 @@
 <style lang="scss">
 
   .mon-timeline{
-    max-height: 500px;
+    max-height: 520px;
   }
 </style>

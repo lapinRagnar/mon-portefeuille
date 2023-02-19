@@ -14,12 +14,12 @@
 
         <q-toolbar-title class="mon-q-toolbar-title">
 
-          <div class="text-geometry-logo">
-            <TextGeometryLogo />
+          <div>
+            Developpeur Fontend
           </div>
 
-          <div>
-            developpeur Fontend
+          <div class="text-geometry-logo">
+            <TextGeometryLogo />
           </div>
 
         </q-toolbar-title>
@@ -30,14 +30,50 @@
     <q-drawer
       v-model="leftDrawerOpen"
       bordered
+      show-if-above
+      :mini="miniState"
+      @mouseover="miniState = false"
+      @mouseout="miniState = true"
+      dark
+      class="text-white"
+      :width="150"
     >
       <q-list>
-        <q-item-label
+        <!-- <q-item-label
           header
         >
-          Bonjour hahaha
+          <div>
+            Bonjour hahaha
+          </div>
 
-        </q-item-label>
+        </q-item-label> -->
+
+
+
+        <q-item clickable v-ripple class="q-mt-xl">
+          <q-item-section avatar>
+            <q-icon name="inbox" />
+          </q-item-section>
+
+          <q-item-section>
+            Inbox
+          </q-item-section>
+        </q-item>
+
+        <q-item
+          clickable
+          v-ripple
+          @click="lienExterieur('https://github.com/lapinRagnar')"
+        >
+          <q-item-section avatar>
+            <q-icon name="fa-brands fa-github" />
+          </q-item-section>
+
+          <q-item-section>
+            Github
+          </q-item-section>
+        </q-item>
+
 
       </q-list>
     </q-drawer>
@@ -62,16 +98,22 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
+    const miniState = ref(true)
 
-    const x = 'mavariable'
-    console.log('ici', x)
+    function lienExterieur(lien){
+      window.open(lien, '_blank')
+      console.log("ca marche");
+    }
+
 
     return {
 
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      miniState,
+      lienExterieur
     }
   }
 })

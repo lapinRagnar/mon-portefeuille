@@ -426,7 +426,7 @@
     }
 
     .colonne-a-droite{
-      max-height: 500px;
+      max-height: 580px;
     }
   }
 
@@ -494,7 +494,7 @@
 
   /** mon chevron */
   .mon-chevron{
-    margin-top:40px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
   }
