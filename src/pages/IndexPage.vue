@@ -480,7 +480,6 @@
 
   .largeur-caroussel{
     margin-top: 50px;
-
   }
 
 
