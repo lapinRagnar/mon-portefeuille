@@ -115,7 +115,7 @@
     let step2 = 0
     let speed2 = 0.01019
 
-    fontLoader.load('../../node_modules/three/examples/fonts/droid/droid_serif_bold.typeface.json', (font) => {
+    fontLoader.load('Roboto_Bold.json', (font) => {
 
       for (let i = 0; i < texts.length; i++) {
 
