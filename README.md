@@ -2,6 +2,11 @@
 
 Mon portefeuille
 
+# demo
+Project Console: https://console.firebase.google.com/project/lapinragnar-portefeuille/overview
+Hosting URL: https://lapinragnar-portefeuille.web.app
+
+
 ## Install the dependencies
 ```bash
 yarn
