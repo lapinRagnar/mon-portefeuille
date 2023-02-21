@@ -409,15 +409,15 @@
 
     @keyframes animate {
       0%, 100%{
-        background-image: url('fond-ecran-accueil.jpg');
+        background-image: url('src/assets/fond-ecran-accueil.jpg');
       }
 
       35%{
-        background-image: url('background-image1.jpg');
+        background-image: url('src/assets/background-image1.jpg');
       }
 
       75%{
-        background-image: url('background-image2.jpg');
+        background-image: url('src/assets/background-image2.jpg');
       }
     }
     /* opacity: 0.3; */

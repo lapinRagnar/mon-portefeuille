@@ -1,6 +1,6 @@
 <template>
   <div>ca marche encore</div>
-  <div class=" mon-logo q-mb-xl" ref="container">&nbsp</div>
+  <div class=" mon-logo q-mb-xl mon-fond-ecran" ref="container">&nbsp</div>
   <div style="margin-top: 50px;">ha ha ha </div>
 </template>
 
@@ -17,8 +17,8 @@
 
   onMounted(() => {
 
-    const width = 700
-    const height = 500
+    const width = 1200
+    const height = 300
 
     const scene = new THREE.Scene()
 
@@ -88,7 +88,18 @@
       cube.rotation.y += deltaTime * 0.5
       cube.rotation.z += deltaTime * 0.02
 
-      textMesh.rotation.y += 0.001;
+      // textMesh.rotation.y += 0.001;
+        // Calculate the position of the textMesh
+      const radius = 3
+      const theta = deltaTime * 0.5
+      const x = radius * Math.cos(theta)
+      const y = radius * Math.sin(theta)
+      textMesh.position.set(x, y, 0)
+
+      // Rotate the textMesh
+      textMesh.rotation.x += deltaTime * 0.05
+      textMesh.rotation.y += deltaTime * 0.05
+      textMesh.rotation.z += deltaTime * 0.05
 
       renderer.render(scene, camera)
     }
@@ -107,5 +118,10 @@
       display: flex !important;
       background-color: transparent;
     }
+  }
+
+  .mon-fond-ecran{
+    background-color: red;
+    background-image: url('src/assets/fond-ecran-accueil.jpg');
   }
 </style>
