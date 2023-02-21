@@ -3,18 +3,18 @@
   <div class="q-px-lg q-pb-md mon-timeline">
 
     <q-timeline color="secondary">
-      <q-timeline-entry heading body="Timeline heading" />
+      <q-timeline-entry heading body="Démo && code recent " />
 
       <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
+        title="Mon Portefeuille"
+        subtitle="Jan 2023"
         avatar="https://cdn.quasar.dev/img/avatar3.jpg"
         :body="body"
       />
 
       <q-timeline-entry
-        title="Event Title"
-        subtitle="February 21, 1986"
+        title="Clone du Razer"
+        subtitle="dec 2022"
         icon="delete"
         :body="body"
       />
