@@ -7,10 +7,11 @@
           dense
           round
           color="orange"
-          icon="menu"
+          icon="fa-solid fa-bars fa-fade"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
+
 
         <q-toolbar-title class="mon-q-toolbar-title">
 

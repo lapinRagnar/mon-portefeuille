@@ -33,10 +33,11 @@
     camera.position.set(0, 0, 5)
 
 
+
     const geometryBox = new THREE.BoxGeometry( 1, 1, 1 )
     const materialBox = new THREE.MeshBasicMaterial( { color: 0x0bff00 } )
     const cube = new THREE.Mesh( geometryBox, materialBox )
-    cube.position.set(0, 2, 0)
+    cube.position.set(-5, -0.9, 0)
     scene.add( cube )
 
     const clock = new THREE.Clock()
@@ -100,6 +101,7 @@
       textMesh.rotation.x += deltaTime * 0.05
       textMesh.rotation.y += deltaTime * 0.05
       textMesh.rotation.z += deltaTime * 0.05
+
 
       renderer.render(scene, camera)
     }

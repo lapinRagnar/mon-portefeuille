@@ -120,13 +120,13 @@
         <div class="mon-chevron">
 
           <q-icon
-            name="fa-solid fa-chevron-down fa-beat"
-            size="70px"
+            name="fa-solid fa-chevron-down fa-bounce"
+            size="40px"
             color="orange-5"
           />
           <q-icon
-            name="fa-solid fa-chevron-down fa-beat"
-            size="70px"
+            name="fa-solid fa-chevron-down fa-bounce"
+            size="40px"
             color="orange-5"
           />
 
@@ -498,7 +498,7 @@
 
   /** mon chevron */
   .mon-chevron{
-    margin-top: 10px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
   }

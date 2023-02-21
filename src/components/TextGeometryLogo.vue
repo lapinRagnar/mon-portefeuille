@@ -62,7 +62,7 @@
 
       requestAnimationFrame(animate)
 
-      const time = - performance.now() * 0.00005;
+      const time = - performance.now() * 0.00025;
 
       camera.position.x = 1 * Math.sin( time );
       camera.position.y = 2 * Math.cos( time );
