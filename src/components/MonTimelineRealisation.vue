@@ -2,65 +2,79 @@
 
   <div class="q-px-lg q-pb-md mon-timeline">
 
-    <q-timeline color="secondary">
-      <q-timeline-entry heading body="Démo && code recent " />
-
+    <q-timeline dark>
+      <q-timeline-entry heading>
+        Derniers Codes && Démo
+      </q-timeline-entry>
       <q-timeline-entry
-        title="Mon Portefeuille"
-        subtitle="Jan 2023"
-        avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-        :body="body"
-      />
-
-      <q-timeline-entry
-        title="Clone du Razer"
-        subtitle="dec 2022"
-        icon="delete"
-        :body="body"
-      />
-
-      <q-timeline-entry heading body="November, 2017" />
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        :body="body"
-      />
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        :body="body"
-      />
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        color="orange"
-        icon="done_all"
-        :body="body"
-      />
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        :body="body"
-      />
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        :body="body"
+        v-for="(data, index) in datas"
+        :key="index"
+        :title="data.title"
+        :subtitle="data.subtitle"
+        :avatar="data.avatar"
+        :body="data.body"
+        :color="data.color"
       />
     </q-timeline>
-
 
   </div>
 
 </template>
 
 <script setup>
-  const body = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore optio fugiat perspiciatis at quae, cum explicabo. Dicta, delectus minima velit error fugiat sequi quisquam deleniti adipisci, illum enim quas incidunt!"
+
+  const datas = [
+    {
+      title: 'Couter cart product - e-commerce',
+      subtitle: 'Jan 2023',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'Challenge Frontend Mentor - html, scss, vue3 js, quasar js',
+      color: 'orange'
+    },
+    {
+      title: 'Homepage ',
+      subtitle: 'Dec 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'Challenge Frontend - HTML, scss, js, vue, vuetify',
+      color: 'green'
+    },
+    {
+      title: 'Tweeter clone',
+      subtitle: 'Nov 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'HTML, scss, js, vue, quasar, firebase.',
+      color: 'purple'
+    },
+    {
+      title: 'Razer clone',
+      subtitle: 'Oct 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'HTML, scss, js, vue, quasar.',
+      color: 'yellow'
+    },
+    {
+      title: 'Bank Dashboard',
+      subtitle: 'Oct 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'HTML, SCSS, js, vue, vuetify.'
+    },
+
+    {
+      title: 'Boutique e-commerce',
+      subtitle: 'Sept 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'HTML, SCSS, js, vue, vuetify.',
+      color: 'blue'
+    },
+    {
+      title: 'Todo ninja',
+      subtitle: 'Sept 2022',
+      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      body: 'HTML, CSS, js, vue, vuetify, firebase auth.',
+      color: 'white'
+    },
+  ]
+
 </script>
 
 <style lang="scss">
