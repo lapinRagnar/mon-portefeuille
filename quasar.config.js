@@ -25,7 +25,8 @@ module.exports = configure(function (/* ctx */) {
     boot: [
 
       'axios',
-      'tsParticles'
+      'tsParticles',
+      'firebase'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css

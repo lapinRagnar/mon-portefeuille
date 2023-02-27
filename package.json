@@ -12,6 +12,7 @@
     "@quasar/extras": "^1.0.0",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "firebase": "^9.17.1",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",

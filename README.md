@@ -37,3 +37,9 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-
 - relier le timeline et les cardes listes des mes codes
 - faire le system de login, logout, ... sur firebase
 - quand on est connecté, on peut ajouter des codes
+
+
+### documentation du package : firebase-composables 
+https://firebase-composables.netlify.app/getting-started.html#install
+
+

@@ -195,9 +195,7 @@
         <TextGeometryLogo />
       </div>
 
-      <div>salut</div>
 
-      <TesterThreeJs />
 
 
     </div>
