@@ -11,7 +11,7 @@
         :key="index"
         :title="data.title"
         :subtitle="data.subtitle"
-        :avatar="data.avatar"
+        :icon="data.icon"
         :body="data.body"
         :color="data.color"
       />
@@ -27,51 +27,51 @@
     {
       title: 'Couter cart product - e-commerce',
       subtitle: 'Jan 2023',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'Challenge Frontend Mentor - html, scss, vue3 js, quasar js',
       color: 'orange'
     },
     {
       title: 'Homepage ',
       subtitle: 'Dec 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'Challenge Frontend - HTML, scss, js, vue, vuetify',
       color: 'green'
     },
     {
       title: 'Tweeter clone',
       subtitle: 'Nov 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'HTML, scss, js, vue, quasar, firebase.',
       color: 'purple'
     },
     {
       title: 'Razer clone',
       subtitle: 'Oct 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'HTML, scss, js, vue, quasar.',
       color: 'yellow'
     },
     {
       title: 'Bank Dashboard',
       subtitle: 'Oct 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'HTML, SCSS, js, vue, vuetify.'
     },
 
     {
       title: 'Boutique e-commerce',
       subtitle: 'Sept 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'HTML, SCSS, js, vue, vuetify.',
       color: 'blue'
     },
     {
       title: 'Todo ninja',
       subtitle: 'Sept 2022',
-      avatar: 'https://cdn.quasar.dev/img/avatar3.jpg',
+      icon: 'fa-solid fa-code',
       body: 'HTML, CSS, js, vue, vuetify, firebase auth.',
-      color: 'white'
+      color: 'grey'
     },
   ]
 

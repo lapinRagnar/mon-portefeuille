@@ -7,7 +7,7 @@
           dense
           round
           color="orange"
-          icon="fa-solid fa-bars fa-fade"
+          icon="fa-solid fa-bars"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
@@ -25,7 +25,47 @@
 
         </q-toolbar-title>
 
+
+        <q-btn
+          color="orange"
+          flat
+          round
+          dense
+          icon="fa-solid fa-gear fa-fade"
+        >
+
+          <q-menu
+            dark
+            transition-show="rotate"
+            transition-hide="rotate"
+            anchor="top middle"
+            self="bottom middle"
+          >
+            <q-list style="min-width: 150px">
+
+              <q-item clickable>
+
+                <q-item-section avatar>
+                  <q-icon color="primary" name="fa-solid fa-user" />
+                </q-item-section>
+
+                <q-item-section>Login</q-item-section>
+
+              </q-item>
+
+
+              <q-separator />
+
+              <q-item clickable>
+                <q-item-section>Mind blown</q-item-section>
+              </q-item>
+
+            </q-list>
+          </q-menu>
+        </q-btn>
+
       </q-toolbar>
+
     </q-header>
 
     <q-drawer
@@ -50,21 +90,89 @@
         </q-item-label> -->
 
 
+        <q-item
+          clickable
+          v-ripple
+          class="q-mt-xl"
+          active-class="my-menu-link"
+          :active="link === 'Home'"
+          @click="link = 'Home'"
+        >
 
-        <q-item clickable v-ripple class="q-mt-xl">
           <q-item-section avatar>
-            <q-icon name="inbox" />
+            <q-icon name="home" />
           </q-item-section>
 
           <q-item-section>
-            Inbox
+            Home
           </q-item-section>
+
+        </q-item>
+
+
+        <q-item
+          clickable
+          v-ripple
+          class="q-mt-xl"
+          active-class="my-menu-link"
+          :active="link === 'Google'"
+          @click="link = 'Google'"
+        >
+
+          <q-item-section avatar>
+            <q-icon name="fa-brands fa-google" />
+          </q-item-section>
+
+          <q-item-section>
+            Google
+          </q-item-section>
+
         </q-item>
 
         <q-item
           clickable
           v-ripple
+          active-class="my-menu-link"
+          :active="link === 'Facebook'"
+          @click="link = 'Facebook'"
+        >
+
+          <q-item-section avatar>
+            <q-icon name="fa-brands fa-facebook-f" />
+          </q-item-section>
+
+          <q-item-section>
+            Facebook
+          </q-item-section>
+
+        </q-item>
+
+
+        <q-item
+          clickable
+          v-ripple
+          active-class="my-menu-link"
+          :active="link === 'Twitter'"
+          @click="link = 'Twitter'"
+        >
+
+          <q-item-section avatar>
+            <q-icon name="fa-brands fa-twitter" />
+          </q-item-section>
+
+          <q-item-section>
+            Twitter
+          </q-item-section>
+
+        </q-item>
+
+
+        <q-item
+          clickable
+          v-ripple
           @click="lienExterieur('https://github.com/lapinRagnar')"
+          active-class="my-menu-link"
+          :active="link === 'Github'"
         >
           <q-item-section avatar>
             <q-icon name="fa-brands fa-github" />
@@ -76,7 +184,28 @@
         </q-item>
 
 
+        <q-item
+          clickable
+          v-ripple
+          active-class="my-menu-link"
+          :active="link === 'Settings'"
+          @click="link = 'Settings'"
+          style="margin-top: 280px"
+        >
+
+          <q-item-section avatar>
+            <q-icon name="fa-solid fa-gear" />
+          </q-item-section>
+
+          <q-item-section>
+            Settings
+          </q-item-section>
+
+        </q-item>
+
+
       </q-list>
+
     </q-drawer>
 
     <q-page-container>
@@ -114,7 +243,8 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
       miniState,
-      lienExterieur
+      lienExterieur,
+      link: ref('Home')
     }
   }
 })
@@ -150,4 +280,10 @@ export default defineComponent({
       padding-bottom: 0;
     }
   }
+
+  .my-menu-link{
+    color: white;
+    background: #F2C037
+  }
+
 </style>
