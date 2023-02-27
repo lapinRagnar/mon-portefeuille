@@ -31,3 +31,9 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+
+### to do
+- relier le timeline et les cardes listes des mes codes
+- faire le system de login, logout, ... sur firebase
+- quand on est connecté, on peut ajouter des codes
