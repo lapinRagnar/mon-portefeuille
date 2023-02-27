@@ -154,7 +154,7 @@
 
         <div
           class="q-pa-md col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 "
-          v-for="(donnee, i) in donneesMonCards"
+          v-for="(donnee, i) in mesDatasPourTimelineEtCardStore.datas"
           :key="i"
         >
 
@@ -221,9 +221,16 @@
   import Clock from '../components/Clock.vue'
   import { ref, onMounted } from 'vue'
 
+  /** les données du store */
+  import { useMesDatasPourTimelineEtCardStore } from 'src/stores/mesdataspourtimelineetcard';
 
   const slide = ref('style')
   const time = ref(new Date().toLocaleTimeString())
+
+
+  /** initialiser les données du store pinia  */
+  const mesDatasPourTimelineEtCardStore = useMesDatasPourTimelineEtCardStore()
+
 
   /* les variables fait avec chatgpt pour le writetyping effect */
   const message = ref('');
@@ -243,11 +250,11 @@
 
   const donneesMonCards = [
     {
-      title: 'Couter cart product - e-commerce',
+      title: 'Couter cart product && e-commerce',
       subtitle1: 'Challenge Frontend Mentor 1',
       content: 'html, scss, vue3 js, quasar js',
       img: 'e-commerce-product-card.png',
-      codeLink: ' https://github.com/lapinRagnar/vue3-quasar-ecomerce-product-page-chg-frontendmentor-2',
+      codeLink: 'https://github.com/lapinRagnar/vue3-quasar-ecomerce-product-page-chg-frontendmentor-2',
       liveLink: 'https://quasar-challeng2-ecomerce-cart.web.app/',
     },
     {

@@ -7,12 +7,12 @@
         Derniers Codes && Démo
       </q-timeline-entry>
       <q-timeline-entry
-        v-for="(data, index) in datas"
+        v-for="(data, index) in mesDatasPourTimelineEtCardStore.datas"
         :key="index"
         :title="data.title"
         :subtitle="data.subtitle"
         :icon="data.icon"
-        :body="data.body"
+        :body="data.content"
         :color="data.color"
       />
     </q-timeline>
@@ -22,6 +22,9 @@
 </template>
 
 <script setup>
+
+  import { onMounted } from 'vue';
+  import { useMesDatasPourTimelineEtCardStore } from 'src/stores/mesdataspourtimelineetcard';
 
   const datas = [
     {
@@ -74,6 +77,15 @@
       color: 'grey'
     },
   ]
+
+  /** initialiser les données du store pinia  */
+  const mesDatasPourTimelineEtCardStore = useMesDatasPourTimelineEtCardStore()
+
+  onMounted(() => {
+
+    console.log('ici', mesDatasPourTimelineEtCardStore.datas[0].title)
+
+  })
 
 </script>
 
