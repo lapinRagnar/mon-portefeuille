@@ -69,6 +69,16 @@
 
               <q-separator />
 
+              <q-item clickable :to="{name: 'settings'}" v-if="authStore.user">
+
+                <q-item-section avatar>
+                  <q-icon color="primary" name="settings" />
+                </q-item-section>
+
+                <q-item-section>Settings</q-item-section>
+
+              </q-item>
+
               <q-item clickable @click="seDeconnecter" v-if="authStore.user">
 
                 <q-item-section avatar>
@@ -212,6 +222,8 @@
           :active="link === 'Settings'"
           @click="link = 'Settings'"
           style="margin-top: 280px"
+          v-if="authStore.user"
+          :to="{name: 'settings'}"
         >
 
           <q-item-section avatar>

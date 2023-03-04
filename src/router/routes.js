@@ -16,7 +16,7 @@ const routes = [
     component: () => import('src/layouts/AuthLayout.vue'),
     children: [
       {
-        path: '',
+        path: 'register',
         name: 'register',
         component: () => import('src/pages/myfirebase/MyFirebaseRegisterPage.vue')
       },
@@ -24,6 +24,11 @@ const routes = [
         path: 'login',
         name: 'login',
         component: () => import('src/pages/myfirebase/MyFirebaseLoginPage.vue')
+      },
+      {
+        path: '',
+        name: 'settings',
+        component: () => import('src/pages/myfirebase/SettingsIndex.vue')
       },
 
     ]
