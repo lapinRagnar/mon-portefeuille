@@ -8,7 +8,8 @@
 
 
 import { initializeApp } from "firebase/app"
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore'
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_ENV_API_KEY,
@@ -20,8 +21,11 @@ const firebaseConfig = {
   measurementId: process.env.VUE_APP_ENV_MESASUREMENT_ID
 }
 
+
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
-export default db
+const auth = getAuth(app)
+
+export { auth, db }
 

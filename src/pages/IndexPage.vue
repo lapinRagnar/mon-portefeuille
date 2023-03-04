@@ -220,7 +220,7 @@
   import { ref, onMounted } from 'vue'
 
   /** les données du store */
-  import { useMesDatasPourTimelineEtCardStore } from 'src/stores/mesdataspourtimelineetcard';
+  import { useMesDatasPourTimelineEtCardStore } from 'src/stores/mesdataspourtimelineetcard'
 
   const slide = ref('style')
   const time = ref(new Date().toLocaleTimeString())
