@@ -242,7 +242,13 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <!-- <router-view /> -->
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+      
     </q-page-container>
   </q-layout>
 </template>

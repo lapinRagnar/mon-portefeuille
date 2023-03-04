@@ -209,7 +209,7 @@
   import MonPremierThreeJs from 'src/components/MonPremierThreeJs.vue'
   import TextGeometryLogo from 'src/components/TextGeometryLogo.vue'
   import MonTimelineRealisation from 'src/components/MonTimelineRealisation.vue'
-  import TesterThreeJs from 'src/components/TesterThreeJs.vue'
+  // import TesterThreeJs from 'src/components/TesterThreeJs.vue'
 
   /** aos animation on scroll */
   import AOS from 'aos'
@@ -329,6 +329,9 @@
 
 
   onMounted(() => {
+
+    // recuperer la data de firestore
+    mesDatasPourTimelineEtCardStore.obtenirDataFirebase()
 
     // pour la writetyping
     type()

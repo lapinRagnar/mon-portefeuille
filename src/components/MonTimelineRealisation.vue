@@ -32,7 +32,7 @@
 
   onMounted(() => {
 
-    console.log('ici', mesDatasPourTimelineEtCardStore.datas[0].title)
+    // console.log('ici', mesDatasPourTimelineEtCardStore.datas[0].title)
 
   })
 
