@@ -1,5 +1,5 @@
 <script setup>
-import FirebaseRegisterCard from 'components/firebase/FirebaseRegisterCard.vue'
+import FirebaseRegisterCard from 'src/components/firebase/FirebaseRegisterCard.vue'
 
 </script>
 

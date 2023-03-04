@@ -1,6 +1,6 @@
 <script setup>
 import { QCard, QBanner, QCardSection, QBtn } from 'quasar'
-import useRegister from 'firebase-actions/useRegister'
+import useRegister from 'src/actions/firebase/useRegister.js'
 import FirebaseRegisterForm from 'components/firebase/FirebaseRegisterForm.vue'
 
 const {

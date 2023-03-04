@@ -4,6 +4,7 @@ node_modules
 
 # firebase
 config/firebase-config.js
+.env
 
 # Quasar core related directories
 .quasar
