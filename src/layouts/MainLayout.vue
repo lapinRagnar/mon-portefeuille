@@ -232,40 +232,33 @@
   </q-layout>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue'
-import TextGeometryLogo from '../components/TextGeometryLogo.vue'
+<script setup>
+  import { ref, onMounted } from 'vue'
+  import TextGeometryLogo from '../components/TextGeometryLogo.vue'
+  import { useAuthStore } from 'src/stores/auth';
 
 
-export default defineComponent({
-  name: 'MainLayout',
+  const leftDrawerOpen = ref(false)
+  const miniState = ref(true)
+  const link = ref('Home')
 
-  components: {
-    TextGeometryLogo
-  },
+  const authStore = useAuthStore()
 
-  setup () {
-    const leftDrawerOpen = ref(false)
-    const miniState = ref(true)
+  onMounted(() => {
+    console.log('je suis dans on mounted de main layout')
+    authStore.authenticationStateObserver()
+  }),
 
-    function lienExterieur(lien){
-      window.open(lien, '_blank')
-      console.log("ca marche");
-    }
-
-
-    return {
-
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-      miniState,
-      lienExterieur,
-      link: ref('Home')
-    }
+  function lienExterieur(lien){
+    window.open(lien, '_blank')
+    console.log("ca marche");
   }
-})
+
+  const toggleLeftDrawer = () => {
+    leftDrawerOpen.value = !leftDrawerOpen.value
+  }
+
+
 </script>
 
 <style lang="scss">

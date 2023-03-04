@@ -3,7 +3,8 @@ import { ref } from 'vue'
 import { auth } from 'src/boot/firebase'
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from "firebase/auth"
 
 export const useAuthStore = defineStore('auth', () => {
@@ -45,7 +46,26 @@ export const useAuthStore = defineStore('auth', () => {
     })
   }
 
+  /**authentication state observer */
+  function authenticationStateObserver(){
+  onAuthStateChanged(auth, (u) => {
+    if (u) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      // const uid = user.uid
+      // ...
+      user.value = u
+      console.log("l'utilisateur connecté est ", user.value)
+
+    } else {
+      // User is signed out
+      // ...
+      console.log("l'utilisateur est deconnecté!")
+    }
+  })
+}
+
   return {
-    essai, registerUser, loginUser
+    essai, registerUser, loginUser, authenticationStateObserver
   }
 })
