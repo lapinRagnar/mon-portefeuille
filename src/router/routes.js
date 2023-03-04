@@ -4,14 +4,22 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      {
+        path: '',
+        name: 'home',
+        component: () => import('pages/IndexPage.vue')
+      }
     ]
   },
   {
     path: '/auth',
     component: () => import('src/layouts/AuthLayout.vue'),
     children: [
-      { path: '', component: () => import('src/pages/myfirebase/MyFirebaseRegisterPage.vue') }
+      {
+        path: '',
+        name: 'register',
+        component: () => import('src/pages/myfirebase/MyFirebaseRegisterPage.vue')
+      }
     ]
   },
 

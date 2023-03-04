@@ -20,15 +20,15 @@
       <q-tabs class="bg-grey">
         <q-route-tab
           icon="map"
-          to="/your/route"
+          :to="{name: 'home'}"
           replace
-          label="One Tab"
+          label="Home"
         />
         <q-route-tab
           icon="assignment"
           to="/some/other/route"
           replace
-          label="Other Tab"
+          label="Login"
         />
       </q-tabs>
     </q-header>
@@ -88,3 +88,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  body {
+    background: #959595;
+    background: linear-gradient(to right, #959595 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #4E4E4E 76%, #383838 87%, #1B1B1B 100%);
+  }
+</style>

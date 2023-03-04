@@ -54,7 +54,7 @@
 
               </q-item>
 
-              <q-item clickable>
+              <q-item clickable :to="{name: 'register'}">
 
                 <q-item-section avatar>
                   <q-icon color="primary" name="fa-solid fa-user-plus" />

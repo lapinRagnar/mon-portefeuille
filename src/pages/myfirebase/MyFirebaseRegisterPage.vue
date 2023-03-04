@@ -1,9 +1,10 @@
 <template>
-  <div class="flex flex-center text-white q-ma-lg">
-    <div>Register to Firebase</div>
+  <div class=" text-green q-ma-lg ma-form">
+    <div class="text-h3 q-mb-xl">Register to Firebase</div>
     <q-form
       @submit="onSubmit"
-      class="q-gutter-md"
+      class="q-gutter-md text-white"
+      style="width: 300px"
     >
       <q-input
         filled
@@ -13,6 +14,7 @@
         hint="ton email"
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Ton email STP!']"
+        dark
       />
 
       <q-input
@@ -25,6 +27,7 @@
           val => val !== null && val !== '' || 'Ton mot de passe stp!',
           val => (val.length > 4 )|| 'mot de passe > 4 caractère!'
         ]"
+        dark
       />
 
       <div>
@@ -43,8 +46,6 @@
 
   const authStore = useAuthStore()
 
-  console.log('authStore', authStore.essai)
-
   const email = ref(null)
   const password = ref(null)
   // const $q = useQuasar()
@@ -59,5 +60,10 @@
 
 
 <style lang="scss" scoped>
-
+  .ma-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
