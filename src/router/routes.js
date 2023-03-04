@@ -19,7 +19,13 @@ const routes = [
         path: '',
         name: 'register',
         component: () => import('src/pages/myfirebase/MyFirebaseRegisterPage.vue')
-      }
+      },
+      {
+        path: 'login',
+        name: 'login',
+        component: () => import('src/pages/myfirebase/MyFirebaseLoginPage.vue')
+      },
+
     ]
   },
 

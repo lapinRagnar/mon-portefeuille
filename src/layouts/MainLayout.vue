@@ -44,7 +44,7 @@
           >
             <q-list style="min-width: 150px">
 
-              <q-item clickable>
+              <q-item clickable :to="{name: 'login'}">
 
                 <q-item-section avatar>
                   <q-icon color="primary" name="fa-solid fa-user" />
