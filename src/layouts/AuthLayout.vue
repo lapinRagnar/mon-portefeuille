@@ -3,7 +3,7 @@
 
     <!-- (Optional) The Header -->
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-black">
         <q-btn
           flat
           round
@@ -17,7 +17,7 @@
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs>
+      <q-tabs class="bg-grey">
         <q-route-tab
           icon="map"
           to="/your/route"
@@ -35,22 +35,7 @@
 
     <!-- (Optional) The Footer -->
     <q-footer>
-      <q-tabs switch-indicator>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
-
-      <q-toolbar>
+      <q-toolbar class="bg-black">
         <q-btn
           flat
           round

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-center text-white q-ma-lg">
     Register to Firebase
   </div>
 </template>

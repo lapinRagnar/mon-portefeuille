@@ -40,6 +40,7 @@
             transition-hide="rotate"
             anchor="top middle"
             self="bottom middle"
+            max-height="300px"
           >
             <q-list style="min-width: 150px">
 
@@ -53,12 +54,29 @@
 
               </q-item>
 
+              <q-item clickable>
+
+                <q-item-section avatar>
+                  <q-icon color="primary" name="fa-solid fa-user-plus" />
+                </q-item-section>
+
+                <q-item-section>Register</q-item-section>
+
+              </q-item>
+
 
               <q-separator />
 
               <q-item clickable>
-                <q-item-section>Mind blown</q-item-section>
+
+                <q-item-section avatar>
+                  <q-icon color="primary" name="logout" />
+                </q-item-section>
+
+                <q-item-section>Logout</q-item-section>
+
               </q-item>
+
 
             </q-list>
           </q-menu>
