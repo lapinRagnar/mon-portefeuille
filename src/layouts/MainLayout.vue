@@ -25,13 +25,15 @@
 
         </q-toolbar-title>
 
+        <div class="text-green">{{ authStore.user ? '(' + authStore.user.email + ')' : '' }}</div>
 
+        <!-- quand l'user n'est pas connecté -->
         <q-btn
           color="orange"
           flat
           round
           dense
-          icon="fa-solid fa-gear fa-fade"
+          :icon=" authStore.user ? 'fa-solid fa-user' : 'fa-solid fa-gear fa-fade'"
         >
 
           <q-menu
@@ -42,9 +44,9 @@
             self="bottom middle"
             max-height="300px"
           >
-            <q-list style="min-width: 150px">
+            <q-list style="min-width: 150px; max-height: 300px;">
 
-              <q-item clickable :to="{name: 'login'}">
+              <q-item clickable :to="{name: 'login'}" v-if="!authStore.user">
 
                 <q-item-section avatar>
                   <q-icon color="primary" name="fa-solid fa-user" />
@@ -54,7 +56,7 @@
 
               </q-item>
 
-              <q-item clickable :to="{name: 'register'}">
+              <q-item clickable :to="{name: 'register'}" v-if="!authStore.user">
 
                 <q-item-section avatar>
                   <q-icon color="primary" name="fa-solid fa-user-plus" />
@@ -67,7 +69,7 @@
 
               <q-separator />
 
-              <q-item clickable>
+              <q-item clickable @click="seDeconnecter" v-if="authStore.user">
 
                 <q-item-section avatar>
                   <q-icon color="primary" name="logout" />
@@ -81,6 +83,7 @@
             </q-list>
           </q-menu>
         </q-btn>
+
 
       </q-toolbar>
 
@@ -244,9 +247,11 @@
 
   const authStore = useAuthStore()
 
+
   onMounted(() => {
     console.log('je suis dans on mounted de main layout')
     authStore.authenticationStateObserver()
+    console.log(' connecté ou pas',authStore.value)
   }),
 
   function lienExterieur(lien){
@@ -256,6 +261,13 @@
 
   const toggleLeftDrawer = () => {
     leftDrawerOpen.value = !leftDrawerOpen.value
+  }
+
+  const seDeconnecter = ()=>{
+    console.log('entrain de se deconnecte!')
+    authStore.logoutUser()
+    authStore.$reset
+    console.log('authStore', authStore.user)
   }
 
 

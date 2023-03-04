@@ -42,17 +42,20 @@
 <script setup>
   import { useAuthStore } from 'src/stores/auth'
   import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
   // import { useQuasar } from 'quasar'
 
   const authStore = useAuthStore()
+
+  const router = useRouter()
 
   const email = ref(null)
   const password = ref(null)
   // const $q = useQuasar()
 
   const onSubmit = () => {
-    console.log('ca marche, email et pswd', email.value, password.value)
     authStore.registerUser(email.value, password.value)
+    router.push({name: 'home'})
   }
 
 

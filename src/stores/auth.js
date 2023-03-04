@@ -1,16 +1,20 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { auth } from 'src/boot/firebase'
+import { useRouter } from 'vue-router'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "firebase/auth"
 
 export const useAuthStore = defineStore('auth', () => {
 
   const essai = ref('salut')
   const user = ref(null)
+
+  const router = useRouter()
 
   /** enregister un user */
   function registerUser(email, password) {
@@ -48,24 +52,38 @@ export const useAuthStore = defineStore('auth', () => {
 
   /**authentication state observer */
   function authenticationStateObserver(){
-  onAuthStateChanged(auth, (u) => {
-    if (u) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // const uid = user.uid
-      // ...
-      user.value = u
-      console.log("l'utilisateur connecté est ", user.value)
+    onAuthStateChanged(auth, (u) => {
+      if (u) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        // const uid = user.uid
+        // ...
+        user.value = u
+        console.log("l'utilisateur connecté est ", user.value)
 
-    } else {
-      // User is signed out
-      // ...
-      console.log("l'utilisateur est deconnecté!")
-    }
-  })
-}
+      } else {
+        // User is signed out
+        // ...
+        console.log("l'utilisateur est deconnecté!")
+      }
+    })
+  }
+
+  /** logout */
+  function logoutUser(){
+    console.log('ca marche logout')
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log('bien deconnecté')
+      user.value = null
+      router.push({name: 'home'})
+    }).catch((error) => {
+      // An error happened.
+      console.log('erreur de deconnexion');
+    })
+  }
 
   return {
-    essai, registerUser, loginUser, authenticationStateObserver
+    user, essai, registerUser, loginUser, authenticationStateObserver, logoutUser,
   }
 })
