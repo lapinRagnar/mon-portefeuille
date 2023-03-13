@@ -1,0 +1,32 @@
+[debug] [2023-03-13T22:40:10.602Z] ----------------------------------------------------------------------
+[debug] [2023-03-13T22:40:10.606Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lapin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-03-13T22:40:10.607Z] CLI Version:   11.23.1
+[debug] [2023-03-13T22:40:10.608Z] Platform:      win32
+[debug] [2023-03-13T22:40:10.608Z] Node Version:  v19.0.1
+[debug] [2023-03-13T22:40:10.608Z] Time:          Mon Mar 13 2023 23:40:10 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2023-03-13T22:40:10.609Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-13T22:40:10.623Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-03-13T22:40:10.853Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-13T22:40:10.854Z] > authorizing via signed-in user (lapinragnar@gmail.com)
+[debug] [2023-03-13T22:40:10.854Z] [iam] checking project lapinragnar-portefeuille for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-03-13T22:40:10.856Z] > refreshing access token with scopes: []
+[debug] [2023-03-13T22:40:10.858Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-13T22:40:10.858Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-03-13T22:40:31.914Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-03-13T22:40:31.917Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-03-13T22:40:31.918Z] > refreshing access token with scopes: []
+[debug] [2023-03-13T22:40:31.919Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-13T22:40:31.919Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-13T22:40:52.970Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-03-13T22:40:57.982Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\lapin\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.

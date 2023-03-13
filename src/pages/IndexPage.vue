@@ -217,7 +217,7 @@
   /** three js */
 
   import Clock from '../components/Clock.vue'
-  import { ref, onMounted } from 'vue'
+  import { ref, onMounted, onUnmounted  } from 'vue'
 
   /** les données du store */
   import { useMesDatasPourTimelineEtCardStore } from 'src/stores/mesdataspourtimelineetcard'
@@ -344,6 +344,11 @@
 
     // pour l'animation text avec three
 
+  })
+
+  onUnmounted(() => {
+    console.log('je suis dans le on unmount')
+    mesDatasPourTimelineEtCardStore.datas = []
   })
 
 
