@@ -26,7 +26,7 @@
         />
         <q-route-tab
           icon="fa-solid fa-plus"
-          to="/some/other/route"
+          :to="{name: 'ajouter-demo'}"
           replace
           label="Ajout démo"
         />

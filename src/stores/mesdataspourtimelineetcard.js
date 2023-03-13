@@ -119,9 +119,28 @@ export const useMesDatasPourTimelineEtCardStore = defineStore('useMesDatasPourTi
         }
       })
     })
-    
   }
 
-  return { datas, obtenirDataFirebase }
+  async function ajouterDemo(formulaireDemo){
+    console.log('ajouter démo marche!', formulaireDemo.value.title)
+    let newDemo = {
+      title: formulaireDemo.value.title,
+      subtitle: formulaireDemo.value.subtitle,
+      subtitle1: formulaireDemo.value.subtitle1,
+      content: formulaireDemo.value.content,
+      img: formulaireDemo.value.img,
+      codeLink: formulaireDemo.value.codeLink,
+      liveLink: formulaireDemo.value.liveLink,
+      icon: formulaireDemo.value.icon,
+      color: formulaireDemo.value.color
+    }
+
+    const demoRef = collection(db, 'mesDemos')
+    const enregistrer = await addDoc(demoRef, newDemo)
+    console.log('demo ajouté', enregistrer.id);
+
+  }
+
+  return { datas, obtenirDataFirebase, ajouterDemo  }
 
 })

@@ -12,6 +12,17 @@ const routes = [
     ]
   },
   {
+    path: '/settings',
+    component: () => import('src/layouts/AuthLayout.vue'),
+    children: [
+      {
+        path: 'ajouter-demo',
+        name: 'ajouter-demo',
+        component: () => import('src/pages/settings/FormAjoutDemo.vue')
+      }
+    ]
+  },
+  {
     path: '/auth',
     component: () => import('src/layouts/AuthLayout.vue'),
     children: [
