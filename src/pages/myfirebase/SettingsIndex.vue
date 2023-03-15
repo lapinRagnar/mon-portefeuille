@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-h3 text-center text-white q-ma-xl">Settings && Admin</div>
+
     <div class="text-h2 text-orange text-weight-bold q-pl-md">Liste de demos</div>
 
     <div class="q-pa-md">

@@ -13,7 +13,7 @@
         />
 
         <q-toolbar-title>
-          Header
+          Settings && Admin
         </q-toolbar-title>
       </q-toolbar>
 
@@ -64,7 +64,7 @@
     </q-drawer>
 
     <q-page-container>
-    
+
       <!-- This is where pages get injected -->
       <!-- <router-view /> -->
       <router-view v-slot="{ Component }">
