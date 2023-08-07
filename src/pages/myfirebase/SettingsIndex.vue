@@ -10,6 +10,7 @@
         row-key="name"
         dark
       >
+        <!-- styliser le header -->
         <template #header-cell="props">
           <q-th
             style="font-size: 1.4em;"
@@ -93,7 +94,7 @@
         </template>
 
 
-        <!-- parametrer le body du tableau -->
+        <!-- parametrer le body du tableau - on peut editer en cliquant sur l'input (reactive) -->
         <template #body-cell="props">
           <q-td
             :props="props"
@@ -108,7 +109,49 @@
           </q-td>
         </template>
 
+        <!-- style="text-align: left; max-width: 120px; overflow: hidden;" -->
+        <!-- <template #body="props">
+          <q-tr
+            :props="props.value"
+          >
+
+            <q-td
+              :key="props.row.title"
+              :props="props.value"
+            >
+
+              <q-input
+                dark
+                v-model="props.row.title"
+                borderless
+                dense
+              />
+
+            </q-td>
+
+            <q-td
+              :key="props.row.subtitle"
+              :props="props.value"
+            >
+
+              <q-input
+                dark
+                v-model="props.row.subtitle"
+                borderless
+                dense
+              />
+
+            </q-td>
+
+
+
+          </q-tr>
+
+        </template> -->
+
       </q-table>
+
+      <pre>{{ rows }}</pre>
     </div>
 
     <!-- <div class="q-pa-md">
@@ -120,6 +163,8 @@
         color="green"
       />
     </div> -->
+
+    <q-input v-model="rows"></q-input>
 
     <div
       v-for="(demo, i) in mesDatasPourTimelineEtCardStore.datas"
@@ -165,7 +210,21 @@
   ]
 
   const rows = mesDatasPourTimelineEtCardStore.datas
-  console.log('rows', rows);
+
+  // const rows = ref([
+  //   {
+  //   "subtitle1": "Challenge Frontend Mentor 2",
+  //   "icon": "fa-solid fa-code",
+  //   "codeLink": "https://quasar-frontendmontor-ch1.web.app/",
+  //   "content": "HTML, scss, js, vue, vuetify.",
+  //   "img": "homepage-frontendmentor.png",
+  //   "color": "green",
+  //   "title": "Homepage",
+  //   "liveLink": "https://quasar-frontendmontor-ch1.web.app/",
+  //   "subtitle": "Dec 2022",
+  //   "id": "c9zdgSqisuydXHLBx6v5"
+  // },
+  // ])
 
 
 </script>
