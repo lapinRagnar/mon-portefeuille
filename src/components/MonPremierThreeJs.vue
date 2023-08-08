@@ -84,7 +84,10 @@
       "Javascript",
       "HTML",
       "Vue JS",
-      "Quasar JS"
+      "Quasar JS",
+      "Nuxt JS",
+      "SCSS",
+      "Bootstrap",
     ]
 
     const colorFrontList = [
@@ -93,6 +96,9 @@
       { color: 0x364236 },
       { color: 0xffff00 },
       { color: 0xd2b1ea },
+      { color: 0xff11ea },
+      { color: 0x5a183d },
+      { color: 0x8154cf },
       // { color: 0xff00ff },
     ]
     const colorRearList = [
@@ -101,10 +107,13 @@
       { color: 0x014c56 },
       { color: 0x800080 },
       { color: 0xec6e19 },
+      { color: 0x110e19 },
+      { color: 0xec6e19 },
+      { color: 0x3f6f19 },
       // { color: 0xff00ff },
     ]
 
-    var texts = ['HTML', 'CSS', 'Vue JS', 'Quasar JS']
+    var texts = ['HTML', 'CSS', 'Vue JS', 'Quasar JS', 'Nuxt JS', 'SCSS', 'Firebase']
     var textGeometries = []
     var textMaterialsFront = []
     var textMaterialsRear = []

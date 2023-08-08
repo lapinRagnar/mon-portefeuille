@@ -6,9 +6,8 @@ Mon portefeuille
 Project Console: https://console.firebase.google.com/project/lapinragnar-portefeuille/overview
 Hosting URL: https://lapinragnar-portefeuille.web.app
 
-# demo sur netlify
-Logs:              https://app.netlify.com/sites/lapinragnar-portefeuille/deploys/63f4b8c80811a916a1577135
-Website Draft URL: https://63f4b8c80811a916a1577135--lapinragnar-portefeuille.netlify.app
+(n'est pas à jour pour l'instant)
+
 
 
 ## Install the dependencies
@@ -49,3 +48,8 @@ https://firebase-composables.netlify.app/getting-started.html#install
 > netlify login
 > netlify deploy
 > netlify deploy --prod
+
+# demo sur netlify
+# l'adresse du site - live - demo
+https://lapinragnar-portfolio.netlify.app/#/
+
