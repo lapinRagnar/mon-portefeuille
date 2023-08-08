@@ -43,3 +43,9 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-
 https://firebase-composables.netlify.app/getting-started.html#install
 
 
+# j'ai depolyé ce site sur netlify avec github (en utilisant netlify CLI, installé en global sur ma machine)
+# il faut faire
+> quasar build
+> netlify login
+> netlify deploy
+> netlify deploy --prod

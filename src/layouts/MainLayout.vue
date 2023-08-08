@@ -16,7 +16,7 @@
         <q-toolbar-title class="mon-q-toolbar-title">
 
           <div>
-            Developpeur Fontend
+            Developpeur Fontend - Vue JS
           </div>
 
           <div class="text-geometry-logo">
@@ -248,7 +248,7 @@
           <component :is="Component" />
         </keep-alive>
       </router-view>
-      
+
     </q-page-container>
   </q-layout>
 </template>
